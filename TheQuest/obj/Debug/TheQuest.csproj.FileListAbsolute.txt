@@ -1,0 +1,10 @@
+F:\Dev\reps\TheQuest\TheQuest\bin\Debug\TheQuest.exe.config
+F:\Dev\reps\TheQuest\TheQuest\bin\Debug\TheQuest.exe
+F:\Dev\reps\TheQuest\TheQuest\bin\Debug\TheQuest.pdb
+F:\Dev\reps\TheQuest\TheQuest\obj\Debug\TheQuest.csprojAssemblyReference.cache
+F:\Dev\reps\TheQuest\TheQuest\obj\Debug\TheQuest.Form1.resources
+F:\Dev\reps\TheQuest\TheQuest\obj\Debug\TheQuest.Properties.Resources.resources
+F:\Dev\reps\TheQuest\TheQuest\obj\Debug\TheQuest.csproj.GenerateResource.cache
+F:\Dev\reps\TheQuest\TheQuest\obj\Debug\TheQuest.csproj.CoreCompileInputs.cache
+F:\Dev\reps\TheQuest\TheQuest\obj\Debug\TheQuest.exe
+F:\Dev\reps\TheQuest\TheQuest\obj\Debug\TheQuest.pdb
