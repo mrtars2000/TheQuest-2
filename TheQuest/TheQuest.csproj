@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Direction.cs" />
     <Compile Include="Enemies\Bat.cs" />
     <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="Enemies\Ghost.cs" />
