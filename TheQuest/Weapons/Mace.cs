@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheQuest.Weapons
 {
-    class Mace
+    class Mace : Weapon
     {
     }
 }
