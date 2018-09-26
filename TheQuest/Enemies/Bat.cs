@@ -13,10 +13,10 @@ namespace TheQuest.Enemies
 
         public override void Move(Random random)
         {
-            if(HitPoints > 0)
+            if(!Dead)
             {
                 Direction directionToMove;
-                if (random.Next(1) == 1)
+                if (random.Next(2) == 1)
                     directionToMove = FindPlayerDirection(game.PlayerLocation);
                 else
                     directionToMove = (Direction)random.Next(4);
