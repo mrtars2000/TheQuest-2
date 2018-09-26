@@ -19,15 +19,22 @@ namespace TheQuest
             this.game = game;
             this.location = location;
         }
-
+        
         public bool Nearby(Point locationToCheck, int distance)
         {
-            if (Math.Abs(location.X - locationToCheck.X) < distance && (Math.Abs(location.Y - locationToCheck.Y) < distance))
+            Point targetLocation = Location; // check later
+            if (Math.Abs(targetLocation.X - locationToCheck.X) < distance && (Math.Abs(targetLocation.Y - locationToCheck.Y) < distance))
             {
                 return true;
             }
             else
                 return false;
+        }
+
+        public bool Nearby(Point locationToCheck, Point target, int distance)
+        {
+            location = target;
+            return Nearby(locationToCheck, distance);
         }
 
         public Point Move(Direction direction, Rectangle boundries)
@@ -54,6 +61,12 @@ namespace TheQuest
                 default: break;
             }
             return newLocation;
+        }
+
+        public Point Move(Direction direction, Point target, Rectangle boundries)
+        {
+            location = target;
+            return  Move(direction, boundries);
         }
     }
 }
