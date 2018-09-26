@@ -56,6 +56,14 @@ namespace TheQuest
             this.labelBatHP = new System.Windows.Forms.Label();
             this.labelGhostHP = new System.Windows.Forms.Label();
             this.labelGhoulHP = new System.Windows.Forms.Label();
+            this.leftArrowMove = new System.Windows.Forms.Button();
+            this.upArrowMove = new System.Windows.Forms.Button();
+            this.rightArrowMove = new System.Windows.Forms.Button();
+            this.downArrowMove = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.swordField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maceField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bowField)).BeginInit();
@@ -70,6 +78,8 @@ namespace TheQuest
             ((System.ComponentModel.ISupportInitialize)(this.bowInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPotionInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionInventory)).BeginInit();
+            this.moveGroupBox.SuspendLayout();
+            this.attackGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -254,9 +264,13 @@ namespace TheQuest
             // moveGroupBox
             // 
             this.moveGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.moveGroupBox.Controls.Add(this.downArrowMove);
+            this.moveGroupBox.Controls.Add(this.rightArrowMove);
+            this.moveGroupBox.Controls.Add(this.upArrowMove);
+            this.moveGroupBox.Controls.Add(this.leftArrowMove);
             this.moveGroupBox.Location = new System.Drawing.Point(367, 360);
             this.moveGroupBox.Name = "moveGroupBox";
-            this.moveGroupBox.Size = new System.Drawing.Size(85, 60);
+            this.moveGroupBox.Size = new System.Drawing.Size(103, 60);
             this.moveGroupBox.TabIndex = 14;
             this.moveGroupBox.TabStop = false;
             this.moveGroupBox.Text = "Move";
@@ -264,9 +278,13 @@ namespace TheQuest
             // attackGroupBox
             // 
             this.attackGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.attackGroupBox.Controls.Add(this.button5);
+            this.attackGroupBox.Controls.Add(this.button7);
+            this.attackGroupBox.Controls.Add(this.button6);
+            this.attackGroupBox.Controls.Add(this.button8);
             this.attackGroupBox.Location = new System.Drawing.Point(476, 360);
             this.attackGroupBox.Name = "attackGroupBox";
-            this.attackGroupBox.Size = new System.Drawing.Size(85, 60);
+            this.attackGroupBox.Size = new System.Drawing.Size(98, 60);
             this.attackGroupBox.TabIndex = 15;
             this.attackGroupBox.TabStop = false;
             this.attackGroupBox.Text = "Attack";
@@ -367,6 +385,78 @@ namespace TheQuest
             this.labelGhoulHP.TabIndex = 7;
             this.labelGhoulHP.Text = "ghoulHp";
             // 
+            // leftArrowMove
+            // 
+            this.leftArrowMove.Location = new System.Drawing.Point(11, 22);
+            this.leftArrowMove.Name = "leftArrowMove";
+            this.leftArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.leftArrowMove.TabIndex = 0;
+            this.leftArrowMove.Text = "←";
+            this.leftArrowMove.UseVisualStyleBackColor = true;
+            // 
+            // upArrowMove
+            // 
+            this.upArrowMove.Location = new System.Drawing.Point(36, 8);
+            this.upArrowMove.Name = "upArrowMove";
+            this.upArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.upArrowMove.TabIndex = 1;
+            this.upArrowMove.Text = "↑";
+            this.upArrowMove.UseVisualStyleBackColor = true;
+            // 
+            // rightArrowMove
+            // 
+            this.rightArrowMove.Location = new System.Drawing.Point(62, 23);
+            this.rightArrowMove.Name = "rightArrowMove";
+            this.rightArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.rightArrowMove.TabIndex = 2;
+            this.rightArrowMove.Text = "→";
+            this.rightArrowMove.UseVisualStyleBackColor = true;
+            // 
+            // downArrowMove
+            // 
+            this.downArrowMove.Location = new System.Drawing.Point(36, 37);
+            this.downArrowMove.Name = "downArrowMove";
+            this.downArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.downArrowMove.TabIndex = 3;
+            this.downArrowMove.Text = "↓";
+            this.downArrowMove.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(42, 36);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(25, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "↓";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(68, 22);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(25, 23);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "→";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(42, 7);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(25, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "↑";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(17, 21);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(25, 23);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "←";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +498,8 @@ namespace TheQuest
             ((System.ComponentModel.ISupportInitialize)(this.bowInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPotionInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bluePotionInventory)).EndInit();
+            this.moveGroupBox.ResumeLayout(false);
+            this.attackGroupBox.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -441,6 +533,14 @@ namespace TheQuest
         private System.Windows.Forms.Label labelBatHP;
         private System.Windows.Forms.Label labelGhostHP;
         private System.Windows.Forms.Label labelGhoulHP;
+        private System.Windows.Forms.Button downArrowMove;
+        private System.Windows.Forms.Button rightArrowMove;
+        private System.Windows.Forms.Button upArrowMove;
+        private System.Windows.Forms.Button leftArrowMove;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button8;
     }
 }
 
