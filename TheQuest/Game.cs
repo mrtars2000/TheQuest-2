@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TheQuest.Weapons;
 using TheQuest.Enemies;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace TheQuest
 {
@@ -136,6 +137,9 @@ namespace TheQuest
                     {
                         WeaponInRoom = new Mace(this, GetRandomLocation(random));
                     }
+                    break;
+                case 8:
+                    Application.Exit();
                     break;
             }
         }
