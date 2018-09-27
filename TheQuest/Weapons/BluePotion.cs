@@ -22,9 +22,12 @@ namespace TheQuest.Weapons
 
         public override void Attack(Direction direction, Random random)
         {
-            used = true;
+            if (!Used)
+            {
+                used = true;
 
-            game.IncreasePlayerHealth(5, random);
+                game.IncreasePlayerHealth(5, random);
+            }
         }
     }
 }

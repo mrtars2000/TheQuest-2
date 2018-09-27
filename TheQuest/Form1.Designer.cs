@@ -46,7 +46,15 @@ namespace TheQuest
             this.redPotionInventory = new System.Windows.Forms.PictureBox();
             this.bluePotionInventory = new System.Windows.Forms.PictureBox();
             this.moveGroupBox = new System.Windows.Forms.GroupBox();
+            this.DownArrowMove = new System.Windows.Forms.Button();
+            this.RightArrowMove = new System.Windows.Forms.Button();
+            this.UpArrowMove = new System.Windows.Forms.Button();
+            this.LeftArrowMove = new System.Windows.Forms.Button();
             this.attackGroupBox = new System.Windows.Forms.GroupBox();
+            this.AttackDownArrow = new System.Windows.Forms.Button();
+            this.AttackUpArrow = new System.Windows.Forms.Button();
+            this.AttackRightArrow = new System.Windows.Forms.Button();
+            this.AttackLeftArrow = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,14 +64,6 @@ namespace TheQuest
             this.labelBatHP = new System.Windows.Forms.Label();
             this.labelGhostHP = new System.Windows.Forms.Label();
             this.labelGhoulHP = new System.Windows.Forms.Label();
-            this.leftArrowMove = new System.Windows.Forms.Button();
-            this.upArrowMove = new System.Windows.Forms.Button();
-            this.rightArrowMove = new System.Windows.Forms.Button();
-            this.downArrowMove = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.swordField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maceField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bowField)).BeginInit();
@@ -194,7 +194,6 @@ namespace TheQuest
             this.playerImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerImg.TabIndex = 8;
             this.playerImg.TabStop = false;
-            this.playerImg.Visible = false;
             // 
             // swordInventory
             // 
@@ -209,6 +208,7 @@ namespace TheQuest
             this.swordInventory.TabIndex = 9;
             this.swordInventory.TabStop = false;
             this.swordInventory.Visible = false;
+            this.swordInventory.Click += new System.EventHandler(this.swordInventory_Click);
             // 
             // maceInventory
             // 
@@ -223,6 +223,7 @@ namespace TheQuest
             this.maceInventory.TabIndex = 10;
             this.maceInventory.TabStop = false;
             this.maceInventory.Visible = false;
+            this.maceInventory.Click += new System.EventHandler(this.maceInventory_Click);
             // 
             // bowInventory
             // 
@@ -236,6 +237,7 @@ namespace TheQuest
             this.bowInventory.TabIndex = 11;
             this.bowInventory.TabStop = false;
             this.bowInventory.Visible = false;
+            this.bowInventory.Click += new System.EventHandler(this.bowInventory_Click);
             // 
             // redPotionInventory
             // 
@@ -248,6 +250,7 @@ namespace TheQuest
             this.redPotionInventory.TabIndex = 12;
             this.redPotionInventory.TabStop = false;
             this.redPotionInventory.Visible = false;
+            this.redPotionInventory.Click += new System.EventHandler(this.redPotionInventory_Click);
             // 
             // bluePotionInventory
             // 
@@ -260,14 +263,15 @@ namespace TheQuest
             this.bluePotionInventory.TabIndex = 13;
             this.bluePotionInventory.TabStop = false;
             this.bluePotionInventory.Visible = false;
+            this.bluePotionInventory.Click += new System.EventHandler(this.bluePotionInventory_Click);
             // 
             // moveGroupBox
             // 
             this.moveGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.moveGroupBox.Controls.Add(this.downArrowMove);
-            this.moveGroupBox.Controls.Add(this.rightArrowMove);
-            this.moveGroupBox.Controls.Add(this.upArrowMove);
-            this.moveGroupBox.Controls.Add(this.leftArrowMove);
+            this.moveGroupBox.Controls.Add(this.DownArrowMove);
+            this.moveGroupBox.Controls.Add(this.RightArrowMove);
+            this.moveGroupBox.Controls.Add(this.UpArrowMove);
+            this.moveGroupBox.Controls.Add(this.LeftArrowMove);
             this.moveGroupBox.Location = new System.Drawing.Point(367, 360);
             this.moveGroupBox.Name = "moveGroupBox";
             this.moveGroupBox.Size = new System.Drawing.Size(103, 60);
@@ -275,19 +279,99 @@ namespace TheQuest
             this.moveGroupBox.TabStop = false;
             this.moveGroupBox.Text = "Move";
             // 
+            // DownArrowMove
+            // 
+            this.DownArrowMove.Location = new System.Drawing.Point(36, 37);
+            this.DownArrowMove.Name = "DownArrowMove";
+            this.DownArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.DownArrowMove.TabIndex = 3;
+            this.DownArrowMove.Text = "↓";
+            this.DownArrowMove.UseVisualStyleBackColor = true;
+            this.DownArrowMove.Click += new System.EventHandler(this.DownArrowMove_Click);
+            // 
+            // RightArrowMove
+            // 
+            this.RightArrowMove.Location = new System.Drawing.Point(62, 23);
+            this.RightArrowMove.Name = "RightArrowMove";
+            this.RightArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.RightArrowMove.TabIndex = 2;
+            this.RightArrowMove.Text = "→";
+            this.RightArrowMove.UseVisualStyleBackColor = true;
+            this.RightArrowMove.Click += new System.EventHandler(this.RightArrowMove_Click);
+            // 
+            // UpArrowMove
+            // 
+            this.UpArrowMove.Location = new System.Drawing.Point(36, 8);
+            this.UpArrowMove.Name = "UpArrowMove";
+            this.UpArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.UpArrowMove.TabIndex = 1;
+            this.UpArrowMove.Text = "↑";
+            this.UpArrowMove.UseVisualStyleBackColor = true;
+            this.UpArrowMove.Click += new System.EventHandler(this.UpArrowMove_Click);
+            // 
+            // LeftArrowMove
+            // 
+            this.LeftArrowMove.Location = new System.Drawing.Point(11, 22);
+            this.LeftArrowMove.Name = "LeftArrowMove";
+            this.LeftArrowMove.Size = new System.Drawing.Size(25, 23);
+            this.LeftArrowMove.TabIndex = 0;
+            this.LeftArrowMove.Text = "←";
+            this.LeftArrowMove.UseVisualStyleBackColor = true;
+            this.LeftArrowMove.Click += new System.EventHandler(this.LeftArrowMove_Click);
+            // 
             // attackGroupBox
             // 
             this.attackGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.attackGroupBox.Controls.Add(this.button5);
-            this.attackGroupBox.Controls.Add(this.button7);
-            this.attackGroupBox.Controls.Add(this.button6);
-            this.attackGroupBox.Controls.Add(this.button8);
+            this.attackGroupBox.Controls.Add(this.AttackDownArrow);
+            this.attackGroupBox.Controls.Add(this.AttackUpArrow);
+            this.attackGroupBox.Controls.Add(this.AttackRightArrow);
+            this.attackGroupBox.Controls.Add(this.AttackLeftArrow);
             this.attackGroupBox.Location = new System.Drawing.Point(476, 360);
             this.attackGroupBox.Name = "attackGroupBox";
             this.attackGroupBox.Size = new System.Drawing.Size(98, 60);
             this.attackGroupBox.TabIndex = 15;
             this.attackGroupBox.TabStop = false;
             this.attackGroupBox.Text = "Attack";
+            // 
+            // AttackDownArrow
+            // 
+            this.AttackDownArrow.Location = new System.Drawing.Point(42, 36);
+            this.AttackDownArrow.Name = "AttackDownArrow";
+            this.AttackDownArrow.Size = new System.Drawing.Size(25, 23);
+            this.AttackDownArrow.TabIndex = 7;
+            this.AttackDownArrow.Text = "↓";
+            this.AttackDownArrow.UseVisualStyleBackColor = true;
+            this.AttackDownArrow.Click += new System.EventHandler(this.AttackDownArrow_Click);
+            // 
+            // AttackUpArrow
+            // 
+            this.AttackUpArrow.Location = new System.Drawing.Point(42, 7);
+            this.AttackUpArrow.Name = "AttackUpArrow";
+            this.AttackUpArrow.Size = new System.Drawing.Size(25, 23);
+            this.AttackUpArrow.TabIndex = 5;
+            this.AttackUpArrow.Text = "↑";
+            this.AttackUpArrow.UseVisualStyleBackColor = true;
+            this.AttackUpArrow.Click += new System.EventHandler(this.AttackUpArrow_Click);
+            // 
+            // AttackRightArrow
+            // 
+            this.AttackRightArrow.Location = new System.Drawing.Point(68, 22);
+            this.AttackRightArrow.Name = "AttackRightArrow";
+            this.AttackRightArrow.Size = new System.Drawing.Size(25, 23);
+            this.AttackRightArrow.TabIndex = 6;
+            this.AttackRightArrow.Text = "→";
+            this.AttackRightArrow.UseVisualStyleBackColor = true;
+            this.AttackRightArrow.Click += new System.EventHandler(this.AttackRightArrow_Click);
+            // 
+            // AttackLeftArrow
+            // 
+            this.AttackLeftArrow.Location = new System.Drawing.Point(17, 21);
+            this.AttackLeftArrow.Name = "AttackLeftArrow";
+            this.AttackLeftArrow.Size = new System.Drawing.Size(25, 23);
+            this.AttackLeftArrow.TabIndex = 4;
+            this.AttackLeftArrow.Text = "←";
+            this.AttackLeftArrow.UseVisualStyleBackColor = true;
+            this.AttackLeftArrow.Click += new System.EventHandler(this.AttackLeftArrow_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -385,78 +469,6 @@ namespace TheQuest
             this.labelGhoulHP.TabIndex = 7;
             this.labelGhoulHP.Text = "ghoulHp";
             // 
-            // leftArrowMove
-            // 
-            this.leftArrowMove.Location = new System.Drawing.Point(11, 22);
-            this.leftArrowMove.Name = "leftArrowMove";
-            this.leftArrowMove.Size = new System.Drawing.Size(25, 23);
-            this.leftArrowMove.TabIndex = 0;
-            this.leftArrowMove.Text = "←";
-            this.leftArrowMove.UseVisualStyleBackColor = true;
-            // 
-            // upArrowMove
-            // 
-            this.upArrowMove.Location = new System.Drawing.Point(36, 8);
-            this.upArrowMove.Name = "upArrowMove";
-            this.upArrowMove.Size = new System.Drawing.Size(25, 23);
-            this.upArrowMove.TabIndex = 1;
-            this.upArrowMove.Text = "↑";
-            this.upArrowMove.UseVisualStyleBackColor = true;
-            // 
-            // rightArrowMove
-            // 
-            this.rightArrowMove.Location = new System.Drawing.Point(62, 23);
-            this.rightArrowMove.Name = "rightArrowMove";
-            this.rightArrowMove.Size = new System.Drawing.Size(25, 23);
-            this.rightArrowMove.TabIndex = 2;
-            this.rightArrowMove.Text = "→";
-            this.rightArrowMove.UseVisualStyleBackColor = true;
-            // 
-            // downArrowMove
-            // 
-            this.downArrowMove.Location = new System.Drawing.Point(36, 37);
-            this.downArrowMove.Name = "downArrowMove";
-            this.downArrowMove.Size = new System.Drawing.Size(25, 23);
-            this.downArrowMove.TabIndex = 3;
-            this.downArrowMove.Text = "↓";
-            this.downArrowMove.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(42, 36);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(25, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "↓";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(68, 22);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(25, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "→";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(42, 7);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(25, 23);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "↑";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(17, 21);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(25, 23);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "←";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,7 +476,6 @@ namespace TheQuest
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(661, 438);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.attackGroupBox);
             this.Controls.Add(this.moveGroupBox);
             this.Controls.Add(this.bluePotionInventory);
@@ -481,9 +492,11 @@ namespace TheQuest
             this.Controls.Add(this.bowField);
             this.Controls.Add(this.swordField);
             this.Controls.Add(this.maceField);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.swordField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maceField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bowField)).EndInit();
@@ -533,14 +546,14 @@ namespace TheQuest
         private System.Windows.Forms.Label labelBatHP;
         private System.Windows.Forms.Label labelGhostHP;
         private System.Windows.Forms.Label labelGhoulHP;
-        private System.Windows.Forms.Button downArrowMove;
-        private System.Windows.Forms.Button rightArrowMove;
-        private System.Windows.Forms.Button upArrowMove;
-        private System.Windows.Forms.Button leftArrowMove;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button DownArrowMove;
+        private System.Windows.Forms.Button RightArrowMove;
+        private System.Windows.Forms.Button UpArrowMove;
+        private System.Windows.Forms.Button LeftArrowMove;
+        private System.Windows.Forms.Button AttackDownArrow;
+        private System.Windows.Forms.Button AttackUpArrow;
+        private System.Windows.Forms.Button AttackRightArrow;
+        private System.Windows.Forms.Button AttackLeftArrow;
     }
 }
 

@@ -39,6 +39,8 @@ namespace TheQuest
         public void IncreaseHealth(int health, Random random)
         {
             HitPoints += random.Next(1, health);
+            if (HitPoints > 10)
+                HitPoints = 10;
         }
 
         public void Equip(string weaponName)
@@ -73,7 +75,7 @@ namespace TheQuest
                 return;
             else
             {
-                equippedWeapon.Attack();
+                equippedWeapon.Attack(direction, random);
                 if (equippedWeapon is IPotion)
                     inventory.Remove(equippedWeapon);
             }

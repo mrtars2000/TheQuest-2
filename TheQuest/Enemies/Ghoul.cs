@@ -16,7 +16,7 @@ namespace TheQuest.Enemies
             if (!Dead)
             {
                 if (random.Next(3) != 1) //stays still otherwise (2/3 that will move towards player)
-                    Move(FindPlayerDirection(game.PlayerLocation), game.Boundries);
+                    location = Move(FindPlayerDirection(game.PlayerLocation), game.Boundries);
                 if (NearPlayer())
                     game.HitPlayer(4, random);
             }

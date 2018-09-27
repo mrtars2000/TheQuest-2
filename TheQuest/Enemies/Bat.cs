@@ -20,7 +20,7 @@ namespace TheQuest.Enemies
                     directionToMove = FindPlayerDirection(game.PlayerLocation);
                 else
                     directionToMove = (Direction)random.Next(4);
-                Move(directionToMove, game.Boundries);
+                location = Move(directionToMove, game.Boundries);
                 if (NearPlayer())
                 {
                     game.HitPlayer(2, random);
